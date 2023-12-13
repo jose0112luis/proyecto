@@ -5,7 +5,7 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://127.0.0.1:5432/proyecto
-    username: joseluis
+    username: postgres
     password: jl12*99pv
   jpa:
     show-sql: true
