@@ -6,8 +6,11 @@ package org.proyecto.entity;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -22,13 +25,15 @@ import javax.persistence.Table;
 public class Proyecto {
     
     @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String denominacion;
     private String detalleArrastre;
     private Date fechaInicio;
     private Date fechaFin;
     private String objetivo;
-    private String estado;
+    private Character estado;
     private BigDecimal costoProyecto;
     private String decripcionBreve;
     private String tipo;
@@ -99,11 +104,11 @@ public class Proyecto {
         this.objetivo = objetivo;
     }
 
-    public String getEstado() {
+    public Character getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(Character estado) {
         this.estado = estado;
     }
 
